@@ -1,6 +1,8 @@
-tags: #systems #architecture #research 
+tags: #systems #architecture #research
 
 # Interprocess communication in Microservices
+
+<!-- isn't this heading look like a bigger scope than our research ??? this large base will be overkill -->
 
 ## Abstract
 
@@ -8,8 +10,9 @@ tags: #systems #architecture #research
 
 The goal of this paper is to provide insights about different communication mechanisms in microservice architecture.
 
-## Introduction
+<!-- concept + implementation ? Need a better way to say (not specific to communication mec) -->
 
+## Introduction
 
 ## Synchronous communication Style
 
@@ -33,14 +36,13 @@ Each of the service has its own web server up and running on some port. These se
 
 ### Limitations
 
-1. Autonomous micro services. 
+1. Autonomous micro services.
 
-When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous. 
+When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous.
 
 2. System Resilience
 
 It is the ability of a service to provide responses to the client requests even in the face of adversity.
-
 When micro services have dense network of HTTP request/response and if any service fails, the dependent services may not provide favourable outcomes.
 
 3. Slow system
@@ -53,7 +55,7 @@ One microservice has to wait for downstream service for the response. This makes
 
 Asynchronous communication is based on the concept of events and messages. The caller service emits an event and processes subsequent requests without waiting for the response. An **event** is change in state.
 
-
 ## References
+
 1. [IPC in microservices architecture](https://www.diva-portal.org/smash/get/diva2:1451042/FULLTEXT01.pdf)
-2. 
+2.
