@@ -19,7 +19,9 @@ Synchronous involves request/response style of communication where client sends 
 
 ## Asynchronous communication Style
 
+### Definition
 
+Asynchronous communication is based on the concept of events and messages. The caller service emits an event and processes subsequent requests without waiting for the response. An **event** is change in state.
 
 
 ## References
