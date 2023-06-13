@@ -106,6 +106,24 @@ One microservice has to wait for downstream service for the response. This makes
 
 Asynchronous communication is based on the concept of events and messages. The caller service emits an event and processes subsequent requests without waiting for the response. An **event** is change in state.
 
+### Benefits of Asynchronous communication
+
+* Loose coupling
+
+ In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
+
+* Resilience
+
+ If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
+
+* Performance
+
+ In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
+
+* System extensiblity 
+
+ New microservices can be added to the architecture without requiring changes to existing microservices. 
+
 ## References
 
 1. [IPC in microservices architecture](https://www.diva-portal.org/smash/get/diva2:1451042/FULLTEXT01.pdf)
