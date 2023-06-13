@@ -34,7 +34,58 @@ These are the interfaces provided by services or applications where other servic
 
 Each of the service has its own web server up and running on some port. These services provide endpoints where other services can send requests.
 
-### Limitations
+#### Remote Procedure Call
+
+In microservice architecture, there are various methods of communication. Remote procedure call is one of them. In monolithic architecture where everything is coupled together to make a single unit, processes communicate by calling procedures from another unit in the same system. There is no separation as everything is running at the same place.
+
+In distributed environment, achieving the same functionality of calling a procedure of different service is done by using Remote Procedure call.
+
+##### Why RPC?
+
+Why do we need RPC? Why can't we use REST API method of communication? 
+
+1. Bulkiness
+    REST API commonly implemented using JSON payload over HTTP. JSON schema is bulky and occupy more space than binary format. This makes the request/response bulky. 
+
+2. No schema
+    Schema is optional for REST API using JSON. Defining the contracts for the APIs becomes a challenge.
+
+
+##### gRPC
+
+gRPC is an google implementation for RPC. It is based on binary encoding format [protocol buffer](https://developers.google.com/protocol-buffers) and implemented on top of [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2).
+
+It is strongly typed, polyglot (supports several languages), and provides both server and client side streaming.
+
+![gRPC](https://grpc.io/img/landing-2.svg)
+
+
+
+###### Where to use gRPC?
+
+We can't make everything communication through gRPC. Mostly, gRPC is used for inter-service communication. For public services, REST APIs scheme can be used. 
+
+Moreover, implementing gRPC on a browser based application is not straightforward.
+
+###### gRPC features
+
+1. Strong types and well defined interface
+    All the interfaces contracts are well defined. Unlike json schema where there is no schema, gRPC request and response defines rigid schema. It helps in avoiding runtime errors.
+    
+2. Polyglot
+    It can be used with different programming languages.
+
+3. Stream support
+    It supports stream feature in both client and server. 
+
+4. Other features includes
+    1. Resiliency
+    2. Authentication
+    3. Encryption
+    4. Compression
+
+
+### Limitations of Synchronous communication
 
 1. Autonomous micro services.
 
@@ -58,4 +109,4 @@ Asynchronous communication is based on the concept of events and messages. The c
 ## References
 
 1. [IPC in microservices architecture](https://www.diva-portal.org/smash/get/diva2:1451042/FULLTEXT01.pdf)
-2.
+2. 
