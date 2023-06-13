@@ -1,6 +1,6 @@
 tags: #systems #architecture #research
 
-# Interprocess communication in Microservices
+# Inter Process Communication in Microservices
 
 <!-- isn't this heading look like a bigger scope than our research ??? this large base will be overkill -->
 

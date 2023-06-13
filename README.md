@@ -19,14 +19,14 @@ where the communication or instructions happens only when the responder responds
 For this system to be practical, a request-response model is required.
 where a client requests a server/responder and the responder takes care of responding to this request by a response from its black-boxed processes.
 
-#### Applications
+#### Implementations
 
-Some of the applications of this Synchronous system being :
+Some of the implementations of this Synchronous system being :
 
 1. HTTP
 2. RPC
 3. REST
-4. GraphQL and others
+4. GraphQL
 
 #### Limitations
 
@@ -40,7 +40,7 @@ Although Synchronous system is simple and straight forward to implement, it has 
         1. Examples of each concept
             1. Intro
             2. How it works
-            3. Applications
+            3. Implementations
             4. Limitations
 
 ## Likelihoods of Use
