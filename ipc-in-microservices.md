@@ -105,29 +105,22 @@ When micro services have dense network of HTTP request/response and if any servi
 
 One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
-## Asynchronous communication Style
+## Event Driven System
 
-### Definition
+  Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service B and updates the database.
 
-Asynchronous communication is based on the concept of events and messages. The caller service emits an event and processes subsequent requests without waiting for the response. An **event** is change in state.
+  Event-driven system typically consists of 
+  * Event emitters (agents)
+  * Event consumers (sinks)
+  * Event channels.
 
-### Benefits of Asynchronous communication
+  In the above example, service A is an event emitter, and service B is an event consumer. **Event channel** refer to the pathway through which events flow it may be a queue or an event grid.
 
-* Loose coupling
-
- In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
-
-* Resilience
-
- If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
-
-* Performance
-
- In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
-
-* System extensiblity 
-
- New microservices can be added to the architecture without requiring changes to existing microservices. 
+  Event-driven systems communicate asynchronously and use the following protocols for communication :
+  * Message Queue Telemetry Transport (AMQP)
+  * Advanced Message Queuing Protocol (MQTT)  
+  * Websocket
+  * Simple Text Oriented Messaging Protocol (STOMP)
 
 ## References
 
