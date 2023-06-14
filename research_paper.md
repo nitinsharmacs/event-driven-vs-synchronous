@@ -17,11 +17,11 @@ Synchronous and Event-Driven systems in conceptual and architectural perspective
 
 A Synchronous system is a system,
 where communication, data processing, data transfer, or process execution happen at a blocking/waiting manner.
+
 A analogy could be a phone call from a requester to a responder,
 where the communication or instructions happens only when the responder responds.
 
-For this system to be practical, a request-response model is required.
-where a client requests a server/responder and the responder takes care of responding to this request by a response from its black-boxed processes.
+For this system to be practical, a request-response model is required where a client requests a server/responder and the responder takes care of responding to this request by a response from its black-boxed processes.
 
 Synchronous involves request/response style of communication where client sends request to the server and waits for it reply. Client can only move forward once it gets back the reply from server.
 

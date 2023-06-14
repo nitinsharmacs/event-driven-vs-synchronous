@@ -1,29 +1,34 @@
 tags: #systems #architecture #research
 
-# Inter Process Communication in Microservices
-
-<!-- isn't this heading look like a bigger scope than our research ??? this large base will be overkill -->
+# Event Driven and Synchronous Systems
 
 ## Abstract
 
 ## Goal
 
-The goal of this paper is to provide insights about different communication mechanisms in microservice architecture.
-
-<!-- concept + implementation ? Need a better way to say (not specific to communication mec) -->
+The goal of this paper is to provide information about
+Synchronous and Event-Driven systems in conceptual and architectural perspective.
 
 ## Introduction
 
-## Synchronous communication Style
+This paper would explain about synchronous and event driven systems by taking into account how service interaction takes place in microservices architecture.
 
-Synchronous communication involves request/response style of communication where client sends request to the server and waits for it reply. Client can only move forward once it gets back the reply from server.
+## Synchronous Systems
+
+A synchronous system refers to a system in which various operations, such as communication, data processing, data transfer, or process execution, happen in a blocking or waiting manner. In other words, the system operates in a synchronised and coordinated fashion, where each operation blocks or pauses the execution until it finishes.
+
+An analogy could be a phone call where each party has to wait for other to finish responding. 
+
+In microservice architecture where services are communicating through REST API using HTTP calls, client service has to wait for the response from the server and execution moves forwards once the response comes back.
+
+<!-- Diagram --->
+
+Let's see some of the synchronous communication implementations in microservices.
 
 ### Implementations
 
-There are several methods to implement synchronous communication. Some of them are listed below.
-
-1. REST APIs using HTTP
-2. RCP
+1. REST APIs
+2. RPC
 3. GraphQL
 
 #### REST APIs
@@ -33,6 +38,8 @@ These are the interfaces provided by services or applications where other servic
 Each of the service has its own web server up and running on some port. These services provide endpoints where other services can send requests.
 
 ![REST API](./images/restapi.png)
+
+Considering the example of an E-commerce website, client sends the request to get all products data from the server. Client has to wait for the response from the server and then only client can show all the products. It makes this method of communication synchronous as there is a blocking of execution. 
 
 #### Remote Procedure Call
 
@@ -108,39 +115,19 @@ Asynchronous communication is based on the concept of events and messages. The c
 
 * Loose coupling
 
-  In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
+ In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
 
 * Resilience
 
-  If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
+ If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
 
 * Performance
 
-  In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
+ In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
 
 * System extensiblity 
 
-  New microservices can be added to the architecture without requiring changes to existing microservices.
-
-### Asynchronous communication protocols
-
-* Message Queue Telemetry Transport (AMQP)
-* Advanced Message Queuing Protocol (MQTT)
-* Simple Text Oriented Messaging Protocol (STOMP)
-
-### Common messaging platforms
-
-* RabbitMQ
-* Kafka
-* ActiveMQ
-* Redis Strems
-
-
-### Types of asynchronous communication
-
-* Single-receiver message-based communication
-* Multiple-receiver message-based communication
-
+ New microservices can be added to the architecture without requiring changes to existing microservices. 
 
 ## References
 
