@@ -110,19 +110,39 @@ Asynchronous communication is based on the concept of events and messages. The c
 
 * Loose coupling
 
- In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
+  In this communication method, one service is not aware of the existence of another service, so each service can evolve independently.
 
 * Resilience
 
- If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
+  If a receiver service is down for some reason, the sender service can till send message to the queue without interruption. The receiving service can pick up that message and processes that once it is up and running.
 
 * Performance
 
- In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
+  In this type of communication, the sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
 
 * System extensiblity 
 
- New microservices can be added to the architecture without requiring changes to existing microservices. 
+  New microservices can be added to the architecture without requiring changes to existing microservices.
+
+### Asynchronous communication protocols
+
+* Message Queue Telemetry Transport (AMQP)
+* Advanced Message Queuing Protocol (MQTT)
+* Simple Text Oriented Messaging Protocol (STOMP)
+
+### Common messaging platforms
+
+* RabbitMQ
+* Kafka
+* ActiveMQ
+* Redis Strems
+
+
+### Types of asynchronous communication
+
+* Single-receiver message-based communication
+* Multiple-receiver message-based communication
+
 
 ## References
 
