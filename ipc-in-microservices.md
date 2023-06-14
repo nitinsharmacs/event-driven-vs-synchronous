@@ -16,9 +16,7 @@ The goal of this paper is to provide insights about different communication mech
 
 ## Synchronous communication Style
 
-### Definition
-
-Synchronous involves request/response style of communication where client sends request to the server and waits for it reply. Client can only move forward once it gets back the reply from server.
+Synchronous communication involves request/response style of communication where client sends request to the server and waits for it reply. Client can only move forward once it gets back the reply from server.
 
 ### Implementations
 
@@ -33,6 +31,8 @@ There are several methods to implement synchronous communication. Some of them a
 These are the interfaces provided by services or applications where other services can send requests to. It is the conventional and easy method for inter-service communication.
 
 Each of the service has its own web server up and running on some port. These services provide endpoints where other services can send requests.
+
+![REST API](./images/restapi.png)
 
 #### Remote Procedure Call
 
@@ -57,9 +57,7 @@ gRPC is an google implementation for RPC. It is based on binary encoding format 
 
 It is strongly typed, polyglot (supports several languages), and provides both server and client side streaming.
 
-![gRPC](https://grpc.io/img/landing-2.svg)
-
-
+![gRPC](./images/grpc.svg)
 
 ###### Where to use gRPC?
 
