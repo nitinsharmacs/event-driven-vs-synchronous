@@ -13,16 +13,19 @@ Synchronous and Event-Driven systems in conceptual and architectural perspective
 
 This paper would explain about synchronous and event driven systems by taking into account how service interaction takes place in microservices architecture.
 
+<!-- Introductions and Goals has to be refactored -->
+
 ## Synchronous Systems
 
-A synchronous system refers to a system in which various operations, such as communication, data processing, data transfer, or process execution, happen in a blocking or waiting manner. In other words, the system operates in a synchronised and coordinated fashion, where each operation blocks or pauses the execution until it finishes.
+A synchronous system refers to a system in which various operations, such as communication, data processing, data transfer, or process execution, happen in a blocking or waiting manner. In other words, the system operates in a synchronized and coordinated fashion, where each operation blocks or pauses the execution until it finishes.
 
 An analogy could be a phone call where each party has to wait for other to finish responding.
 
-![Sync](./images/synchronous-systems.png)
-In microservice architecture where services are communicating through REST API using HTTP calls, client service has to wait for the response from the server and execution moves forwards once the response comes back.
+<!-- Image for Synchronous systems -->
 
-Let's see some of the synchronous communication implementations in microservices.
+One of the application of synchronous systems are in microservice architecture, where services communicate through REST API or some other methods using HTTP calls, client service has to wait for the response from the server and execution moves forwards once the response comes back.
+
+Let's see some of the synchronous systems implementations.
 
 ### Implementations
 
@@ -30,15 +33,17 @@ Let's see some of the synchronous communication implementations in microservices
 2. RPC
 3. GraphQL
 
+<!-- Include Synchronous systems examples other than communication -->
+
 #### REST APIs
 
-These are the interfaces provided by services or applications where other services can send requests to. It is the conventional and easy method for inter-service communication.
+REST APIs are the interfaces provided by services or applications where other services can send requests to. It is the conventional and easy method for inter-service communication.
 
-Each of the service has its own web server up and running on some port. These services provide endpoints where other services can send requests.
+Each of the service has its own web server which provides endpoints where other services can send requests.
 
-![REST API](./images/restapi.png)
+<!-- Image for illustrating Rest API -->
 
-Considering the example of an E-commerce website, client sends the request to get all products data from the server. Client has to wait for the response from the server and then only client can show all the products. It makes this method of communication synchronous as there is a blocking of execution.
+Considering the example of an E-commerce website, client (browser) sends the request to get all products data from the server. Client has to wait for the response from the server and then only client can show all the products. It makes this method of communication synchronous as there is a blocking of execution.
 
 #### Remote Procedure Call
 
@@ -49,7 +54,7 @@ REST APIs are the way to access services provided by the server by using request
 
 Following diagram shows how services interact using RPC mechanism.
 
-![gRPC](./images/grpc.svg)
+<!-- Image for illustrating gRPC -->
 
 Figure shows that client and server are interacting using gRPC (Google RPC implementation). When the client sends request to server, client has to wait for the response. Until then client has to block its execution for that request.
 
@@ -59,7 +64,7 @@ Let's see one more way where services interact synchronously.
 
 This is a data query and manipulation language. It gets the request from the clients as a form of a query, it parses and resolves the query and send back the response.
 
-![GraphQL](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*2-x1VspaOC7lO7Xpb76noQ.png)
+<!-- Image for illustrating gRPC -->
 
 Unlike REST APIs, the query has defined schema about what all attributes to send in response. It makes the payload less bulky and only contains the required information.
 
@@ -75,16 +80,16 @@ Now, let's examine some of the drawbacks of synchronous communication.
 
 1. **Autonomous micro services.**
 
-    When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous.
+   When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous.
 
 2. **System Resilience**
 
-    It is the ability of a service to provide responses to the client requests even in the face of adversity.
-    When micro services have dense network of HTTP request/response and if any service fails, the dependent services may not provide favourable outcomes.
+   It is the ability of a service to provide responses to the client requests even in the face of adversity.
+   When micro services have dense network of HTTP request/response and if any service fails, the dependent services may not provide favourable outcomes.
 
 3. **Slow system**
 
-    One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
+   One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
 ## Event Driven System
 
@@ -107,7 +112,7 @@ Event-driven systems communicate asynchronously and use the following protocols 
 - Advanced Message Queuing Protocol (AMQP)
 - Simple Text Oriented Messaging Protocol (STOMP)
 
-#### Websocket 
+#### Websocket
 
 The WebSocket protocol allows for constant, bi-directional communication between the server and client, which means both parties can communicate and exchange data as and when needed.
 
@@ -146,4 +151,4 @@ YouTube's live streaming feature uses WebSockets to enable realtime chat between
 4. [Exploring Microservices Communication Patterns](https://levelup.gitconnected.com/synchronous-vs-asynchronous-by-example-36b7b87711e7)[Microservice communication part 1-every programmer must know](https://medium.com/javarevisited/microservices-communication-part-1-every-programmer-must-know-7c6607d2d563)
 5. [Do you know about GraphQL](https://medium.com/javarevisited/do-you-know-about-graphql-the-query-language-for-api-s-4038660865be)
 6. [An architect's guide to APIs: SOAP, REST, GraphQL, and gRPC](https://www.redhat.com/architect/apis-soap-rest-graphql-grpc)
-7. 
+7.
