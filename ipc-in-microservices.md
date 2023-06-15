@@ -86,7 +86,7 @@ When micro services have dense network of HTTP request/response and if any servi
 
 One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
-## Event Driven System (EDA)
+## Event Driven System
 
 Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
 
@@ -102,10 +102,19 @@ In the above example, service A is an event producer, and service B is an event 
 
 Event-driven systems communicate asynchronously and use the following protocols for communication :
 
+- Websocket
 - Message Queue Telemetry Transport (MQTT)
 - Advanced Message Queuing Protocol (AMQP)
-- Websocket
 - Simple Text Oriented Messaging Protocol (STOMP)
+
+#### Websocket 
+
+The WebSocket protocol allows for constant, bi-directional communication between the server and client, which means both parties can communicate and exchange data as and when needed.
+
+WebSockets don’t use a request/response strategy where a connection is opened in the course of making the request and then closed after it's initially fulfilled. In the case of WebSockets, the connection remains open until closed explicitly.
+
+Example :
+YouTube's live streaming feature uses WebSockets to enable realtime chat between viewers and the streamer. Similarly, YouTube's notification system uses WebSockets to push realtime updates to users, such as when a new video is uploaded or when someone they follow goes live.
 
 ### Benefits of EDA
 
@@ -115,7 +124,7 @@ Event-driven systems communicate asynchronously and use the following protocols 
 
 * Resilience
 
-  let say service B is down for some reason, the producer service that is service A can till send message to the queue without interruption. The service B can pick up that message and processes that once it is up and running.
+  Let say service B is down for some reason, the producer service that is service A can till send message to the queue without interruption. The service B can pick up that message and processes that once it is up and running.
 
 - Performance
 
@@ -124,6 +133,10 @@ Event-driven systems communicate asynchronously and use the following protocols 
 * System extensibility
 
   New microservices can be added to the architecture without requiring changes to existing microservices that is service A and B.
+
+- Cut costs
+
+  Event-driven architectures are push-based, so everything happens on-demand as the event presents itself in the router. This way, you’re not paying for continuous polling to check for an event. This means less network bandwidth consumption, less CPU utilization, less idle fleet capacity, and less SSL/TLS handshakes.
 
 ## References
 
