@@ -107,14 +107,16 @@ One microservice has to wait for downstream service for the response. This makes
 
 ## Event Driven System
 
-  Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service B and updates the database.
+  Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
+
+  An event broker is a system that acts as an intermediary between event producer and consumer, it receives event from producer and transmits them to consumer.
 
   Event-driven system typically consists of 
-  * Event emitters (agents)
+  * Event producer (agents)
   * Event consumers (sinks)
   * Event channels.
 
-  In the above example, service A is an event emitter, and service B is an event consumer. **Event channel** refer to the pathway through which events flow it may be a queue or an event grid.
+  In the above example, service A is an event producer, and service B is an event consumer. **Event channel** refer to the pathway through which events flow it may be a queue or an event grid.
 
   Event-driven systems communicate asynchronously and use the following protocols for communication :
   * Message Queue Telemetry Transport (AMQP)
