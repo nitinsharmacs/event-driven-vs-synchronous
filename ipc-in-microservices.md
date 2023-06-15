@@ -75,16 +75,16 @@ Now, let's examine some of the drawbacks of synchronous communication.
 
 1. **Autonomous micro services.**
 
-When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous.
+    When there is a complex network of HTTP request/response among micro services, it makes those services less autonomous.
 
 2. **System Resilience**
 
-It is the ability of a service to provide responses to the client requests even in the face of adversity.
-When micro services have dense network of HTTP request/response and if any service fails, the dependent services may not provide favourable outcomes.
+    It is the ability of a service to provide responses to the client requests even in the face of adversity.
+    When micro services have dense network of HTTP request/response and if any service fails, the dependent services may not provide favourable outcomes.
 
 3. **Slow system**
 
-One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
+    One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
 ## Event Driven System
 
@@ -145,3 +145,5 @@ YouTube's live streaming feature uses WebSockets to enable realtime chat between
 3. [Microservices patterns: synchronous vs asynchronous communication](https://greeeg.com/en/issues/microservices-patterns-synchronous-vs-asynchronous)
 4. [Exploring Microservices Communication Patterns](https://levelup.gitconnected.com/synchronous-vs-asynchronous-by-example-36b7b87711e7)[Microservice communication part 1-every programmer must know](https://medium.com/javarevisited/microservices-communication-part-1-every-programmer-must-know-7c6607d2d563)
 5. [Do you know about GraphQL](https://medium.com/javarevisited/do-you-know-about-graphql-the-query-language-for-api-s-4038660865be)
+6. [An architect's guide to APIs: SOAP, REST, GraphQL, and gRPC](https://www.redhat.com/architect/apis-soap-rest-graphql-grpc)
+7. 
