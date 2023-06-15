@@ -105,7 +105,7 @@ When micro services have dense network of HTTP request/response and if any servi
 
 One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
-## Event Driven System
+## Event Driven System (EDA)
 
   Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
 
@@ -119,11 +119,29 @@ One microservice has to wait for downstream service for the response. This makes
   In the above example, service A is an event producer, and service B is an event consumer. **Event channel** refer to the pathway through which events flow it may be a queue or an event grid.
 
   Event-driven systems communicate asynchronously and use the following protocols for communication :
-  * Message Queue Telemetry Transport (AMQP)
-  * Advanced Message Queuing Protocol (MQTT)  
+  * Message Queue Telemetry Transport (MQTT)
+  * Advanced Message Queuing Protocol (AMQP)  
   * Websocket
   * Simple Text Oriented Messaging Protocol (STOMP)
 
+### Benefits of EDA
+
+* Loose coupling
+
+  In above example we have seen that service A is not aware of existence of service B, so making changes to any service will not affect communication between them and services can evolve independently.
+
+* Resilience 
+
+  let say service B is down for some reason, the producer service that is service A can till send message to the queue without interruption. The service B can pick up that message and processes that once it is up and running.
+
+* Performance 
+
+  The sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
+
+* System extensiblity 
+
+  New microservices can be added to the architecture without requiring changes to existing microservices that is service A and B.
+  
 ## References
 
 1. [IPC in microservices architecture](https://www.diva-portal.org/smash/get/diva2:1451042/FULLTEXT01.pdf)
