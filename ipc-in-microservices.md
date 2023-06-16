@@ -21,7 +21,7 @@ A synchronous system refers to a system in which various operations, such as com
 
 An analogy could be a phone call where each party has to wait for other to finish responding.
 
-<!-- Image for Synchronous systems -->
+![Synchronous systems](./images/synchronous-systems.jpg "Synchronous execution")
 
 One of the application of synchronous systems are in microservice architecture, where services communicate through REST API or some other methods using HTTP calls, client service has to wait for the response from the server and execution moves forwards once the response comes back.
 
@@ -29,9 +29,9 @@ Let's see some of the synchronous systems implementations.
 
 ### Implementations
 
-1. REST APIs
-2. RPC
-3. GraphQL
+1. REST (Representational State Transfer) APIs
+2. RPC (Remote Procedural Call)
+3. GraphQL (Graph Query Language)
 
 <!-- Include Synchronous systems examples other than communication -->
 
@@ -41,7 +41,7 @@ REST APIs are the interfaces provided by services or applications where other se
 
 Each of the service has its own web server which provides endpoints where other services can send requests.
 
-<!-- Image for illustrating Rest API -->
+![REST API call](./images/rest-api.jpeg)
 
 Considering the example of an E-commerce website, client (browser) sends the request to get all products data from the server. Client has to wait for the response from the server and then only client can show all the products. It makes this method of communication synchronous as there is a blocking of execution.
 
@@ -54,7 +54,7 @@ REST APIs are the way to access services provided by the server by using request
 
 Following diagram shows how services interact using RPC mechanism.
 
-<!-- Image for illustrating gRPC -->
+![gRPC](./images/grpc.jpeg)
 
 Figure shows that client and server are interacting using gRPC (Google RPC implementation). When the client sends request to server, client has to wait for the response. Until then client has to block its execution for that request.
 
@@ -64,11 +64,13 @@ Let's see one more way where services interact synchronously.
 
 This is a data query and manipulation language. It gets the request from the clients as a form of a query, it parses and resolves the query and send back the response.
 
-<!-- Image for illustrating gRPC -->
-
 Unlike REST APIs, the query has defined schema about what all attributes to send in response. It makes the payload less bulky and only contains the required information.
 
 **GraphQL is a specification** and it can be implemented in different languages such as Javascript, Java, C, C++, Python, etc.
+
+Following figure shows multiple clients sending query to GraphQL server which in turn talks with DB services and other services.
+
+![GraphQL](./images/graphql.jpeg)
 
 Mostly communication is done synchronously using request/response model. However, it provides a mechanism of **Subscription** where clients can get real time updates asynchronously.
 
