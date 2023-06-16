@@ -1,6 +1,6 @@
 tags: #systems #architecture #research
 
-# Event Driven and Synchronous Systems
+# Event-Driven and Synchronous Systems
 
 ## Abstract
 
@@ -11,7 +11,7 @@ Synchronous and Event-Driven systems in conceptual and architectural perspective
 
 ## Introduction
 
-This paper would explain about synchronous and event driven systems by taking into account how service interaction takes place in microservices architecture.
+This paper would explain about synchronous and event-driven systems by taking into account how service interaction takes place in microservices architecture.
 
 <!-- Introductions and Goals has to be refactored -->
 
@@ -91,9 +91,9 @@ Now, let's examine some of the drawbacks of synchronous communication.
 
    One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
-## Event Driven Systems
+## Event-Driven Systems
 
-Event driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
+Event-driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
 
 An event broker is a system that acts as an intermediary between event producer and consumer, it receives event from producer and transmits them to consumer.
 
@@ -121,9 +121,9 @@ WebSockets don’t use a request/response strategy where a connection is opened 
 Example :
 YouTube's live streaming feature uses WebSockets to enable realtime chat between viewers and the streamer. Similarly, YouTube's notification system uses WebSockets to push realtime updates to users, such as when a new video is uploaded or when someone they follow goes live.
 
-### Benefits of Event Driven Systems
+### Benefits of Event-Driven Systems
 
-*  Loose coupling
+* Loose coupling
 
   In above example we have seen that service A is not aware of existence of service B, so making changes to any service will not affect communication between them and services can evolve independently.
 
@@ -141,25 +141,25 @@ YouTube's live streaming feature uses WebSockets to enable realtime chat between
 
 * Cut costs
 
-  Event driven systems are push-based, so everything happens on-demand as the event presents itself in the router. This way, you’re not paying for continuous polling to check for an event. This means less network bandwidth consumption, less CPU utilization, less idle fleet capacity, and less SSL/TLS handshakes.
+  Event-driven systems are push-based, so everything happens on-demand as the event presents itself in the router. This way, you’re not paying for continuous polling to check for an event. This means less network bandwidth consumption, less CPU utilization, less idle fleet capacity, and less SSL/TLS handshakes.
 
-### Drawbacks of Event Driven Systems
+### Drawbacks of Event-Driven Systems
 
 * Complexity
 
-  Event driven systems can introduce additional complexity compared to more traditional synchronous systems. The asynchronous nature of event driven communication requires careful design and handling of events, event ordering, event schemas, and event-driven workflows. This complexity can make the system more challenging to develop, test, and maintain.
+  Event-driven systems can introduce additional complexity compared to more traditional synchronous systems. The asynchronous nature of event-driven communication requires careful design and handling of events, event ordering, event schemas, and event-driven workflows. This complexity can make the system more challenging to develop, test, and maintain.
 
 * Inconsistency
 
-  Event driven systems often rely on eventual consistency, meaning that the system's state might not be immediately consistent across all microservices. It can take time for events to propagate and for all subscribers to process and react to events. This can lead to temporary inconsistencies or race conditions in the system, which need to be carefully managed.
+  Event-driven systems often rely on eventual consistency, meaning that the system's state might not be immediately consistent across all microservices. It can take time for events to propagate and for all subscribers to process and react to events. This can lead to temporary inconsistencies or race conditions in the system, which need to be carefully managed.
 
 * Over-engineering of processes 
 
-  Sometimes a simple call from one service to another is enough. In event driven systems, it usually requires much more infrastructure to support it, which will add costs like need of queueing system.
+  Sometimes a simple call from one service to another is enough. In event-driven systems, it usually requires much more infrastructure to support it, which will add costs like need of queueing system.
 
 * Testing 
 
-  Testing and debugging event driven systems can be more complex than traditional systems. Ensuring proper event ordering, verifying the correctness of event driven workflows, and simulating different event scenarios for testing can be challenging.
+  Testing and debugging event-driven systems can be more complex than traditional systems. Ensuring proper event ordering, verifying the correctness of event-driven workflows, and simulating different event scenarios for testing can be challenging.
 
 * Debugging
 
