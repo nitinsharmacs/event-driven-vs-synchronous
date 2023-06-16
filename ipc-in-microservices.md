@@ -83,11 +83,11 @@ Now, let's examine some of the drawbacks of synchronous communication.
 - Simple structure
 
   Synchronous systems are easier to understand and implement,
-  as the parts required for communication are only requester and responder
+  as the parts required for communication are only requester and responder.
 
 - Realtime
 
-  Synchronous systems are blocking such that the data that the client receives will always be realtime
+  Synchronous systems are blocking such that the data that the client receives will always be realtime.
 
 - Easy - Debugging
 
@@ -204,3 +204,4 @@ These are just a few examples of how you can implement event-driven systems. The
 4. [Exploring Microservices Communication Patterns](https://levelup.gitconnected.com/synchronous-vs-asynchronous-by-example-36b7b87711e7)[Microservice communication part 1-every programmer must know](https://medium.com/javarevisited/microservices-communication-part-1-every-programmer-must-know-7c6607d2d563)
 5. [Do you know about GraphQL](https://medium.com/javarevisited/do-you-know-about-graphql-the-query-language-for-api-s-4038660865be)
 6. [An architect's guide to APIs: SOAP, REST, GraphQL, and gRPC](https://www.redhat.com/architect/apis-soap-rest-graphql-grpc)
+    
