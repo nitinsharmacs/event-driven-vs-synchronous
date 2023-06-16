@@ -105,21 +105,27 @@ Event-driven system typically consists of
 
 In the above example, service A is an event producer, and service B is an event consumer. **Event channel** refer to the pathway through which events flow it may be a queue or an event grid.
 
-Event-driven systems communicate asynchronously and use the following protocols for communication :
+### Implementations
 
-- Websocket
-- Message Queue Telemetry Transport (MQTT)
-- Advanced Message Queuing Protocol (AMQP)
-- Simple Text Oriented Messaging Protocol (STOMP)
+Implementing event-driven systems can be done in various ways, depending on the specific requirements and technologies you're using. Here are a few common approaches to consider:
 
-#### Websocket
+1. Observer pattern:
+ The observer pattern is a classic design pattern used to establish a one-to-many relationship between objects. In this pattern, an event source (subject) maintains a list of observers (listeners) and notifies them whenever an event occurs. Observers can then respond to the event accordingly. This pattern is often used in object-oriented programming languages.
 
-The WebSocket protocol allows for constant, bi-directional communication between the server and client, which means both parties can communicate and exchange data as and when needed.
+2. Message queues and brokers: 
+  Message queues and brokers provide a mechanism for decoupling components in an event-driven system. Components can publish events to a message queue, and other components can subscribe to the queue to receive and process those events asynchronously. Popular message brokers include Apache Kafka, RabbitMQ, and Amazon Simple Queue Service (SQS).
 
-WebSockets don’t use a request/response strategy where a connection is opened in the course of making the request and then closed after it's initially fulfilled. In the case of WebSockets, the connection remains open until closed explicitly.
+3. Reactive programming: 
+  Reactive programming is a programming paradigm that deals with asynchronous data streams and event propagation. It emphasizes the use of reactive streams and operators to handle and transform events in a declarative manner. Reactive frameworks like RxJava, Reactor, and Akka provide powerful tools for building event-driven systems.
 
-Example :
-YouTube's live streaming feature uses WebSockets to enable realtime chat between viewers and the streamer. Similarly, YouTube's notification system uses WebSockets to push realtime updates to users, such as when a new video is uploaded or when someone they follow goes live.
+4. Event sourcing and CQRS: 
+  Event sourcing is a technique where changes to an application's state are captured as a sequence of events. Instead of persisting the current state, you persist the events that lead to that state. Combined with Command Query Responsibility Segregation (CQRS), you can separate the write (command) and read (query) models of an application. This approach allows you to maintain a full history of events and easily implement features like event replay and auditing.
+
+5. Webhooks: 
+  Webhooks are a simple and popular way to implement event-driven systems in web applications. With webhooks, you define specific URLs in your application that other services can call when specific events occur. The receiving application can then process the event payload and take appropriate actions. Webhooks are commonly used for integrating third-party services and triggering actions based on external events.
+
+These are just a few examples of how you can implement event-driven systems. The choice of approach depends on the complexity of your system, the technologies you're using, and the specific requirements you have for event handling and propagation.
+
 
 ### Benefits of Event-Driven Systems
 
