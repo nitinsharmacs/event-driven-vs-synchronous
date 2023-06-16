@@ -116,6 +116,8 @@ Now, let's examine some of the drawbacks of synchronous communication.
 
 Event-driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
 
+![Event-Driven System](./images/event-driven-system.jpg)
+
 An event broker is a system that acts as an intermediary between event producer and consumer, it receives event from producer and transmits them to consumer.
 
 Event-driven system typically consists of
@@ -204,4 +206,8 @@ These are just a few examples of how you can implement event-driven systems. The
 4. [Exploring Microservices Communication Patterns](https://levelup.gitconnected.com/synchronous-vs-asynchronous-by-example-36b7b87711e7)[Microservice communication part 1-every programmer must know](https://medium.com/javarevisited/microservices-communication-part-1-every-programmer-must-know-7c6607d2d563)
 5. [Do you know about GraphQL](https://medium.com/javarevisited/do-you-know-about-graphql-the-query-language-for-api-s-4038660865be)
 6. [An architect's guide to APIs: SOAP, REST, GraphQL, and gRPC](https://www.redhat.com/architect/apis-soap-rest-graphql-grpc)
-    
+7. [Benefits of event-driven systems](https://www.neebal.com/blog/advantages-and-disadvantages-of-event-driven-architecture)
+8. [Pros and Cons of Event-Driven Architecture](https://foreignpolicyi.org/event-driven-architecture/)
+9. [What Is Event-Driven Architecture, and When Should I Use It?](https://levelup.gitconnected.com/what-is-event-driven-architecture-and-when-should-i-use-it-1ea9987b85d)
+
+
