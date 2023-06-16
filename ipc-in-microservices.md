@@ -109,65 +109,71 @@ In the above example, service A is an event producer, and service B is an event 
 
 Implementing event-driven systems can be done in various ways, depending on the specific requirements and technologies you're using. Here are a few common approaches to consider:
 
-1. Observer pattern:
- The observer pattern is a classic design pattern used to establish a one-to-many relationship between objects. In this pattern, an event source (subject) maintains a list of observers (listeners) and notifies them whenever an event occurs. Observers can then respond to the event accordingly. This pattern is often used in object-oriented programming languages.
+1. Observer pattern :
 
-2. Message queues and brokers: 
-  Message queues and brokers provide a mechanism for decoupling components in an event-driven system. Components can publish events to a message queue, and other components can subscribe to the queue to receive and process those events asynchronously. Popular message brokers include Apache Kafka, RabbitMQ, and Amazon Simple Queue Service (SQS).
+    The observer pattern is a classic design pattern used to establish a one-to-many relationship between objects. In this pattern, an event source (subject) maintains a list of observers (listeners) and notifies them whenever an event occurs. Observers can then respond to the event accordingly. This pattern is often used in object-oriented programming languages.
 
-3. Reactive programming: 
-  Reactive programming is a programming paradigm that deals with asynchronous data streams and event propagation. It emphasizes the use of reactive streams and operators to handle and transform events in a declarative manner. Reactive frameworks like RxJava, Reactor, and Akka provide powerful tools for building event-driven systems.
+2. Message queues and brokers : 
 
-4. Event sourcing and CQRS: 
-  Event sourcing is a technique where changes to an application's state are captured as a sequence of events. Instead of persisting the current state, you persist the events that lead to that state. Combined with Command Query Responsibility Segregation (CQRS), you can separate the write (command) and read (query) models of an application. This approach allows you to maintain a full history of events and easily implement features like event replay and auditing.
+    Message queues and brokers provide a mechanism for decoupling components in an event-driven system. Components can publish events to a message queue, and other components can subscribe to the queue to receive and process those events asynchronously. Popular message brokers include Apache Kafka, RabbitMQ, and Amazon Simple Queue Service (SQS).
 
-5. Webhooks: 
-  Webhooks are a simple and popular way to implement event-driven systems in web applications. With webhooks, you define specific URLs in your application that other services can call when specific events occur. The receiving application can then process the event payload and take appropriate actions. Webhooks are commonly used for integrating third-party services and triggering actions based on external events.
+3. Reactive programming : 
+
+    Reactive programming is a programming paradigm that deals with asynchronous data streams and event propagation. It emphasizes the use of reactive streams and operators to handle and transform events in a declarative manner. Reactive frameworks like RxJava, Reactor, and Akka provide powerful tools for building event-driven systems.
+
+4. Event sourcing and CQRS : 
+    
+    Event sourcing is a technique where changes to an application's state are captured as a sequence of events. Instead of persisting the current state, you persist the events that lead to that state. Combined with Command Query Responsibility Segregation (CQRS), you can separate the write (command) and read (query) models of an application. This approach allows you to maintain a full history of events and easily implement features like event replay and auditing.
+
+5. Webhooks : 
+  
+    Webhooks are a simple and popular way to implement event-driven systems in web applications. With webhooks, you define specific URLs in your application that other services can call when specific events occur. The receiving application can then process the event payload and take appropriate actions. Webhooks are commonly used for integrating third-party services and triggering actions based on external events.
 
 These are just a few examples of how you can implement event-driven systems. The choice of approach depends on the complexity of your system, the technologies you're using, and the specific requirements you have for event handling and propagation.
 
 
 ### Benefits of Event-Driven Systems
 
-* Loose coupling
+* **Loose coupling**
 
   In above example we have seen that service A is not aware of existence of service B, so making changes to any service will not affect communication between them and services can evolve independently.
 
-* Resilience
+* **Resilience**
 
   Let say service B is down for some reason, the producer service that is service A can till send message to the queue without interruption. The service B can pick up that message and processes that once it is up and running.
 
-* Performance
+* **Performance**
 
   The sender service doesn't need to wait for the response of the receiving service, so it saves time and the sender service can proceed with its other tasks, which improves the system's overall performance.
 
-* System extensibility
+* **System extensibility**
 
   New microservices can be added to the architecture without requiring changes to existing microservices that is service A and B.
 
-* Cut costs
+* **Cut costs**
 
   Event-driven systems are push-based, so everything happens on-demand as the event presents itself in the router. This way, you’re not paying for continuous polling to check for an event. This means less network bandwidth consumption, less CPU utilization, less idle fleet capacity, and less SSL/TLS handshakes.
 
+
 ### Drawbacks of Event-Driven Systems
 
-* Complexity
+* **Complexity**
 
   Event-driven systems can introduce additional complexity compared to more traditional synchronous systems. The asynchronous nature of event-driven communication requires careful design and handling of events, event ordering, event schemas, and event-driven workflows. This complexity can make the system more challenging to develop, test, and maintain.
 
-* Inconsistency
+* **Inconsistency**
 
   Event-driven systems often rely on eventual consistency, meaning that the system's state might not be immediately consistent across all microservices. It can take time for events to propagate and for all subscribers to process and react to events. This can lead to temporary inconsistencies or race conditions in the system, which need to be carefully managed.
 
-* Over-engineering of processes 
+* **Over-engineering of processes**
 
   Sometimes a simple call from one service to another is enough. In event-driven systems, it usually requires much more infrastructure to support it, which will add costs like need of queueing system.
 
-* Testing 
+* **Testing** 
 
   Testing and debugging event-driven systems can be more complex than traditional systems. Ensuring proper event ordering, verifying the correctness of event-driven workflows, and simulating different event scenarios for testing can be challenging.
 
-* Debugging
+* **Debugging**
 
   To debug event-driven systems need advance tooling and techniques.
 
