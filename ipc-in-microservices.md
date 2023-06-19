@@ -136,9 +136,13 @@ Implementing event-driven systems can be done in various ways, depending on the 
 
    The observer pattern is a classic design pattern used to establish a one-to-many relationship between objects. In this pattern, an event source (subject) maintains a list of observers (listeners) and notifies them whenever an event occurs. Observers can then respond to the event accordingly. This pattern is often used in object-oriented programming languages.
 
+![Observer Pattern](./images/observer_pattern.jpeg)
+
 2. Message queues and brokers :
 
    Message queues and brokers provide a mechanism for decoupling components in an event-driven system. Components can publish events to a message queue, and other components can subscribe to the queue to receive and process those events asynchronously. Popular message brokers include Apache Kafka, RabbitMQ, and Amazon Simple Queue Service (SQS).
+
+![Message queues and broker](./images/message_queue.jpeg)
 
 3. Reactive programming :
 
@@ -151,6 +155,8 @@ Implementing event-driven systems can be done in various ways, depending on the 
 5. Webhooks :
 
    Webhooks are a simple and popular way to implement event-driven systems in web applications. With webhooks, you define specific URLs in your application that other services can call when specific events occur. The receiving application can then process the event payload and take appropriate actions. Webhooks are commonly used for integrating third-party services and triggering actions based on external events.
+
+![Webhooks](./images/webhooks.jpeg)
 
 These are just a few examples of how you can implement event-driven systems. The choice of approach depends on the complexity of your system, the technologies you're using, and the specific requirements you have for event handling and propagation.
 
