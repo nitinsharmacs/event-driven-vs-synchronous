@@ -112,6 +112,36 @@ Now, let's examine some of the drawbacks of synchronous communication.
 
   One microservice has to wait for downstream service for the response. This makes the overall request/response process slow. It becomes worse if there is a chain of those requests.
 
+### When to use Synchronous Systems ?
+
+- Immediate response
+
+  Synchronous system is appropriate for actions such as login and purchase, in which the caller must have a reply in order to proceed. 
+
+- Accessing shared data
+
+  When microservices need to access shared data stored in a database, synchronous communication is often used through direct database queries. Microservices can make synchronous requests to the database to fetch, update, or delete data.
+
+- Dependent tasks
+
+  To perform tasks that depend on each other, synchronous systems are useful. For example, a telephone conversation While one person speaks, the other listens. When the first person finishes, the second tends to respond immediately.
+  
+- Responsive and interactive experience
+
+  Synchronous systems are frequently employed in user interfaces and web applications to provide a responsive and interactive experience. When a user performs an action, such as submitting a form or making a request, synchronous communication ensures that the user receives immediate feedback or a response.
+
+- consistency and integrity
+
+  Synchronous systems are commonly used in financial applications to ensure the consistency and integrity of transactions. When transferring funds, making payments, or conducting real-time trading, synchronous communication guarantees that all steps are completed and verified before proceeding.
+
+- coordinating complex workflows
+
+  Synchronous systems can be useful for coordinating complex workflows involving multiple microservices. By employing synchronous communication, each microservice can wait for the completion of a specific step or task before executing its own actions, ensuring proper sequencing and coordination.
+
+- Real-Time Collaboration
+
+  Synchronous systems are ideal for real-time collaboration scenarios, where multiple users need to work together simultaneously. Examples include collaborative document editing, shared whiteboards, or real-time chat applications. Synchronous communication enables immediate updates and feedback, allowing users to see changes made by others in real-time.
+
 ## Event-Driven Systems
 
 Event-driven systems, are systems that uses events to trigger and communicate between decoupled services where an **event** is change in state. For instance, suppose there is a system that has two microservices, A and B, with A allowing users to configure a car and B storing that data in a database. If the user modifies configuration details in service A, it will trigger an event and tell service B about the change in the configuration of the car. Then service B fetches new data from service A and updates the database through event broker.
@@ -204,7 +234,7 @@ These are just a few examples of how you can implement event-driven systems. The
 
   To debug event-driven systems need advance tooling and techniques.
 
-### When to use event-driven systems ?
+### When to use Event-Driven systems ?
 
 * Monitoring and alerting
 
@@ -247,3 +277,6 @@ These are just a few examples of how you can implement event-driven systems. The
 9. [What Is Event-Driven Architecture, and When Should I Use It?](https://levelup.gitconnected.com/what-is-event-driven-architecture-and-when-should-i-use-it-1ea9987b85d)
 10. [Example of event-driven architecture](https://simplicable.com/IT/event-driven-architecture)
 11. [What is an Event-Driven Architecture?](https://aws.amazon.com/event-driven-architecture/#:~:text=You%20can%20use%20an%20event,services%20independently%20from%20other%20teams.)
+12. [Microservice Communication Styles](https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/ch04.html)
+13. [Synchronous vs. asynchronous microservices communication patterns](https://www.theserverside.com/answer/Synchronous-vs-asynchronous-microservices-communication-patterns)
+14. [Synchronous vs. asynchronous communications: The differences](https://www.techtarget.com/searchapparchitecture/tip/Synchronous-vs-asynchronous-communication-The-differences)
