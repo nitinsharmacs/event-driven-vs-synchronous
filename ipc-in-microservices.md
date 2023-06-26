@@ -166,13 +166,13 @@ Implementing event-driven systems can be done in various ways, depending on the 
 
    The observer pattern is a classic design pattern used to establish a one-to-many relationship between objects. In this pattern, an event source (subject) maintains a list of observers (listeners) and notifies them whenever an event occurs. Observers can then respond to the event accordingly. This pattern is often used in object-oriented programming languages.
 
-![Observer Pattern](./images/observer_pattern.jpeg)
+![Observer Pattern](./images/observer-pattern.jpeg)
 
 2. Message queues and brokers :
 
    Message queues and brokers provide a mechanism for decoupling components in an event-driven system. Components can publish events to a message queue, and other components can subscribe to the queue to receive and process those events asynchronously. Popular message brokers include Apache Kafka, RabbitMQ, and Amazon Simple Queue Service (SQS).
 
-![Message queues and broker](./images/message_queue.jpeg)
+![Message queues and broker](./images/message-queue.jpeg)
 
 3. Reactive programming :
 
