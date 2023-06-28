@@ -1,19 +1,22 @@
 tags: #systems #architecture #research
 
-# Event-Driven and Synchronous Systems
+# Event Driven and Synchronous Systems
 
 ## Abstract
 
-The growing technical architectures also need growing communication systems between those processes,
-we use Synchronous and Event driven systems for this concern. Synchronous systems, characterized by waiting for responses, offer real-time data and straightforward implementation. However, they might get drawn back by their tight coupling of processes and of overall speed.
-In contrast, event-driven systems leverage events to initiate communication, leading to performance advantages and loose coupling. Nonetheless, they introduce complexities and require careful consideration of eventual consistency. The selection between these two approaches can be done thorough evaluation of specific requirements and trade-offs. This paper provides a comprehensive analysis of the strengths, weaknesses, and considerations associated with synchronous and event-driven systems.
+Increasing size and complexity of softwares require a suitable system design to make system reliable, maintainable and performant. Selecting a design totally depends upon the system requirements and constraints such as performance, uptime, etc.
+Synchronous and Event driven system are two designs commonly used in softwares.
+
+Synchronous systems, characterised by waiting for responses, offer real-time data and straightforward implementation. However, they might get drawn back by their tight coupling of processes and overall speed.
+
+In contrast, event-driven systems leverage events to communicate, leading performance and loose coupling. Nonetheless, they introduce complexities and require careful consideration of eventual consistency. The selection between these two approaches can be done through evaluation of specific requirements and trade-offs. 
+
+This paper provides a comprehensive analysis of the strengths, weaknesses, and considerations associated with synchronous and event-driven systems.
 
 ## Goal
 
 The goal of this paper is to provide information about
 Synchronous and Event-Driven systems in conceptual and architectural perspective.
-
-## Introduction
 
 ## Synchronous Systems
 
