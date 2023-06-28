@@ -4,16 +4,16 @@ tags: #systems #architecture #research
 
 ## Abstract
 
+The growing technical architectures also need growing communication systems between those processes,
+we use Synchronous and Event driven systems for this concern. Synchronous systems, characterized by waiting for responses, offer real-time data and straightforward implementation. However, they might get drawn back by their tight coupling of processes and of overall speed.
+In contrast, event-driven systems leverage events to initiate communication, leading to performance advantages and loose coupling. Nonetheless, they introduce complexities and require careful consideration of eventual consistency. The selection between these two approaches can be done thorough evaluation of specific requirements and trade-offs. This paper provides a comprehensive analysis of the strengths, weaknesses, and considerations associated with synchronous and event-driven systems.
+
 ## Goal
 
 The goal of this paper is to provide information about
 Synchronous and Event-Driven systems in conceptual and architectural perspective.
 
 ## Introduction
-
-This paper would explain about synchronous and event-driven systems by taking into account how service interaction takes place in microservices architecture.
-
-<!-- Introductions and Goals has to be refactored -->
 
 ## Synchronous Systems
 
@@ -32,8 +32,6 @@ Let's see some of the synchronous systems implementations.
 1. REST (Representational State Transfer) APIs
 2. RPC (Remote Procedural Call)
 3. GraphQL (Graph Query Language)
-
-<!-- Include Synchronous systems examples other than communication -->
 
 #### REST APIs
 
